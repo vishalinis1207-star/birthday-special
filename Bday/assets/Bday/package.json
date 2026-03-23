@@ -1,0 +1,12 @@
+{
+  "name": "birthday-special",
+  "version": "1.0.0",
+  "description": "A Digital Love Story - Birthday Special",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
