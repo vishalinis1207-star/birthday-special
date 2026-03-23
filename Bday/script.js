@@ -455,6 +455,20 @@ if(closeVideoBtn) {
             }
         });
     });
+
+    window.addEventListener('keydown', (e) => {
+        if (!videoModal.classList.contains('hidden') && e.key === 'Escape') {
+            // If the video is in fullscreen, the browser exits fullscreen naturally.
+            // We just ensure we click the close button to exit the modal too.
+            closeVideoBtn.click();
+        }
+    }, true); // Use capture phase so video elements don't swallow the event
+
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal || e.target.classList.contains('modal-img-container')) {
+            closeVideoBtn.click();
+        }
+    });
 }
 
 document.getElementById('secret-btn').addEventListener('click', function () {
